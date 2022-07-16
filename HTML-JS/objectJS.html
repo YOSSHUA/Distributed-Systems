@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--Para especificar que es HTML 5-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Mi primera página web
+    </title>
+</head>
+
+<body>
+    <h1>Intro a Javascript</h1>    
+    <script>
+        persona = new Object();
+        persona.edad = 41;
+        persona.envejece = function(anios){
+            persona.edad = persona.edad + anios;
+        }
+        persona.envejece(1)
+        document.write(persona.edad);
+    </script>    
+</body>
+
+</html>

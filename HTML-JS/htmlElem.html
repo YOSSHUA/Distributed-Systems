@@ -1,0 +1,54 @@
+<!DOCTYPE html> <!--Para especificar que es HTML 5-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Mi primera página web
+        </title>
+    </head>
+    <body>
+        <h1> El encabezado grande</h1>
+        <table>
+            <tr></tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+            </tr>
+            <tr>
+                <td>Juan</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Pedro</td>
+                <td>22</td>
+            </tr>
+        </table>
+
+        <form action="otra.html" method="get" >
+            
+            <select name="carrera">
+                <option value="com" selected> Computación</option>
+                <option value="mec"> Mecatrónica</option>
+                <option value="mat"> Matemáticas</option>
+            </select>
+            <br>
+            
+            <label><input type="checkbox" name="vac">Vacunado</label><br>
+            <label><input type="checkbox" name="ap">Aprobado</label><br>
+
+            <a href="https://www.google.com.mx/" target="_blank">Google</a><br>
+            <a href="https://www.yahoo.com/" target="_blank">Yahoo???</a>
+            <!--<img src="images/perfil.jpg" alt="Aqui va una foto que no se descargo">-->
+
+            <label><input type="radio" name="nivel" value ="prin" checked>Principiante</label>
+            <label><input type="radio" name="nivel" value ="inter" >Intermedio</label>
+            <label><input type="radio" name="nivel" value ="av" >Avanzado</label>
+            <br>
+            <label for="nombre">Nombre:</label><!--Con el for se asocia a un elemento, si le das click al label, se va al input-->
+            <input type="text" id="nombre" name="nombre">
+            <label>Apellido: <input type="text" id="apellido" name="apellido"></label><br>
+            <input type="submit" value="Enviar"><br>
+            <input type="reset" value="Limpiar forma"><br>
+            <input type="button" value="Botón genérico"><br>
+        </form>
+    </body>
+</html>

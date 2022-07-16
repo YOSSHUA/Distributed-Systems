@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1><strong>Cotización de seguro para automóvil</strong></h1>
+
+    <h3><strong>Estimado Sr(a):<label id="nom"></label> </strong></h3>
+    <h3>En función de los datos proporcionados: </h3>
+    <h3>Género: <label id="gen"></label></h3>
+    <h3>Edad: <label id="edad"></label></h3>
+    <h3>Estado: <label id="edo"></label></h3>
+    <h3>Marca: <label id="marca"></label></h3>
+    <h3>Modelo: <label id="modelo"></label></h3>
+    <h3>Placas: <label id="placas"></label></h3>
+    <h2><strong>La cotización de su seguro es de <label id="cotizacion"></label> </strong></h2>
+    <script>                
+        const params = window.location.search;
+        const urlParams = new URLSearchParams(params);
+        const nom = urlParams.get("nom");
+        const gen = urlParams.get("gen");
+        const edad = urlParams.get("edad");
+        const edo = urlParams.get("edo");
+        const marca = urlParams.get("marca")
+        const modelo = urlParams.get("modelo")
+        const placas = urlParams.get("placas")        
+        document.getElementById("nom").innerHTML = nom ;
+        document.getElementById("gen").innerHTML = gen;
+        document.getElementById("edad").innerHTML = edad;
+        document.getElementById("edo").innerHTML = edo;
+        document.getElementById("marca").innerHTML = marca;        
+        document.getElementById("modelo").innerHTML = modelo;
+        document.getElementById("placas").innerHTML = placas;        
+
+        if(modelo == "Chevrolet"){
+            document.getElementById("cotizacion").innerHTML = (5000*2022/parseInt(modelo)*1.5).toFixed(2).toString();
+        }else{
+            document.getElementById("cotizacion").innerHTML = (5500*2022/parseInt(modelo)*1.5).toFixed(2).toString();
+        }
+
+
+    </script>
+</body>
+</html>

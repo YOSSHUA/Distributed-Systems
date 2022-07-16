@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Afore</title>    
+</head>
+<body>
+
+    <h1>Calculadora de pensión para trabajadores independientes</h1>
+    <form action="agrega_trabajador" method="POST">
+        {%csrf_token%}
+        <label> Nombre: <input type="text" name="nombre"> </label> <br>    
+        <label> Edad actual: <input type="text" name="edad_act"> </label><br>
+        <label> Edad de retiro: <input type="text" name="edad_ret"> </label><br>
+        <label> Saldo acumulado en el afore: <input type="text" name="saldo"> </label><br>
+        <label> Ahorro mensual esperado: <input type="text" name="ahorro"> </label><br>
+        <input type="radio" id="m" name="gen" checked value="Masculino">
+        <label for="m">Masculino</label>
+        <input type="radio" id="f" name="gen" value="Femenino">
+        <label for="f">Femenino</label><br>
+        <input type="radio" id="o" name="gen" value="Otro">
+        <label for="o">Otro</label><br>
+        <input type="reset" value="Limpiar">
+        <input type="submit" value="Agregar">
+
+    </form>
+    
+</body>
+
+</html>

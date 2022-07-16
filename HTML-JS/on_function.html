@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--Para especificar que es HTML 5-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Mi primera página web
+    </title>
+</head>
+
+<body>
+    <h1>Intro a Javascript</h1>
+    <form>
+        <span id="texto">Este es un texto que va a cambiar</span>
+        <!--<img id="imagen" src="images/marioDown.png" onclick="cambiarImagen('imagen')">-->
+        <img id="imagen" src="images/marioDown.png" onclick="cambiarImagen(this)">
+        <input type="button" value="Cambiar texto" onclick="cambiarDinamicamente('texto')">
+        <script>
+            function cambiarDinamicamente(id){
+                var elemento = document.getElementById(id);
+                elemento.innerHTML = "Este texto es nuevo";
+            }
+            //function cambiarImagen(id){
+            //var elemento = document.getElementById(id);
+            function cambiarImagen(elemento){              
+                if( elemento.src.match("Down") ) {
+                    elemento.src = "images/marioUp.png";
+                }else{
+                    elemento.src = "images/marioDown.png"
+                }
+            }
+        </script>
+
+        <br><br>
+        <label>Ingresa un número del 5 al 10 <input type="text" id="texto"></label>
+        <span id="msg">Aquí va un mensaje de error</span>
+        <input type="button" value="Validar" onclick="validar('texto', 'msg')">
+        <script>
+            function validar(textoEntrada, textoMsg){
+                texto = document.getElementById(textoEntrada).value;
+                document.getElementById(textoMsg).innerHTML="";
+                try{
+                    if(texto === "") throw "Cadena vacía"
+                    if(isNaN(texto)) throw "No es un número"
+                    if(texto < 5) throw "Es un número pequeño"
+                    if(texto > 10) throw "Es un número grande"
+                    
+                }catch(error){
+                    document.getElementById(textoMsg).innerHTML = error;
+                }
+            }
+        </script> 
+
+        <br><br>
+        <span id="msg" onmouseover="eventMouseOver(this)" onmouseout="eventMouseOut(this)" >Mensaje</span>    
+        <script>
+            function eventMouseOver(objeto){
+                objeto.innerHTML = "Mouse Over Me";
+            }
+            function eventMouseOut(objeto){
+                objeto.innerHTML = "OutOfMe";
+            }
+    
+        </script>   
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+
+<body>
+    <script>
+        const allParameters = window.location.search; /// Aquí se guardan todos los parámetros que se mandan en el form
+        document.write("Estos son los parametros:" + allParameters + "<br>");
+        const urlParams = new URLSearchParams(allParameters);
+        /*const nombre = urlParams.get("nombre");
+        console.log(nombre);
+        document.write("Este el nombre:" + nombre);*/
+    </script>
+</body>
+
+</html>

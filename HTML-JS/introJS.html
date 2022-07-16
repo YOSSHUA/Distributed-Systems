@@ -1,0 +1,49 @@
+<!DOCTYPE html> <!--Para especificar que es HTML 5-->
+<html>
+    <head>
+        <script>
+            function saludaInterna(nombre){
+                alert("Hola interna " + nombre)
+            }
+        </script>
+        <script src="scripts/main.js"></script>
+        <meta charset="utf-8">
+        <title>
+            Mi primera página web
+        </title>
+    </head>
+    <body>
+        <h1>Intro a Javascript</h1>
+        <script>
+            var w = 10;
+            document.write(w, "<br>");
+
+            let x = 20;
+            document.write(x, "<br>");
+
+            document.write(y, "<br>");
+            var y = 30;
+
+            document.write(z, "<br>");
+            let z = 40;
+
+            document.write("Después");
+            document.write(z, "<br>");
+        </script>
+         <form name="myForm" action="otra.html" onsubmit="return validateForm()" method="get">
+            <script>
+                function validateForm() {
+                    var x = document.forms["myForm"]["fname"].value;
+                    if (x == null || x === "") {
+                        alert("First name must be filled");
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
+            First name:<input type="text" name="fname">
+            <input type="Submit" value="Enviar">
+    
+        </form>
+    </body>
+</html>

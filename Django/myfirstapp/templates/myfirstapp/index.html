@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Afore</title>
+</head>
+<body>
+    <p>Listado de estudiantes</p>
+    {% if estudiantes %}
+    <ul>
+        {% for estudiante in estudiantes %}
+        <li><a href="{% url 'myfirstapp:detalles' estudiante.id %}"></a>
+            {{estudiante.nombre}}
+            {{estudiante.apellidos}}
+            </a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay estudiantes registrados.</p>
+    {% endif %}
+
+    <br />
+    <form action="agrega_estudiante_forma" method="POST">
+        {%csrf_token%}
+        <label> Nombre: <input type="text" name="nombre"> </label> <br>
+        <label> Apellidos: <input type="text" name="apellidos"> </label><br>
+        <label> Edad: <input type="text" name="edad"> </label><br>
+        <label> Promedio: <input type="text" name="promedio"> </label><br>
+        <label> <input type="checkbox" value="True" name="foraneo"> Foráneo </label><br>
+        <input type="submit" value="Agregar">
+    </form>
+</body>
+
+</html>
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Detalles</title>
+</head>
+
+<body>
+    <p> Información del trabajador</p>
+    {% if trabajador%}
+    <p>{{ trabajador.id }} </p>
+    <p>{{ trabajador.nombre }}
+    {% endif %}
+</body>
+
+</html>

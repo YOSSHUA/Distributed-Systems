@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de simulaciones </title>
+</head>
+<body>
+    <h1>Listado de registros de simulación de pensión</h1>
+    {% if trabajadores %}
+    <ul>
+        {% for trabajador in trabajadores %}
+        <li>
+            <p>
+                Nombre: {{trabajador.nombre}} | 
+                Edad actual: {{trabajador.edad_act}} | 
+                Edad de retiro : {{trabajador.edad_ret}} | 
+                {% if trabajador.genero == 0 %}
+                    Género: Masculino |
+                {% elif trabajador.genero == 1 %}
+                    Género: Femenino |
+                {% else %}
+                    Género: Otro |               
+                {% endif %}  
+                Saldo acumulado: {{ trabajador.saldo }} | 
+                Ahorro mensual: ${{ trabajador.ahorro }} | 
+                Pensión esperada: ${{ trabajador.calcular_pension}}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay trabajadores registrados.</p>
+    {% endif %}
+    
+</body>
+</html>

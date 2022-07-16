@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sistema de cotización de seguros de auto</h1>
+    <h2>Datos personales</h2>
+    Estimado <label id="lblNom"></label><br>
+    Género: <label id="lblGen"></label><br>
+    Edad: <label id="lblEdad"></label><br>
+    Estado: <label id="lblEdo"></label><br>
+    <form id="myForm" method="get" action="cotizar.html">
+        <input type="hidden" name="nom" id="nom">
+        <input type="hidden" name="gen" id="gen">
+        <input type="hidden" name="edad" id="edad">
+        <input type="hidden" name="edo" id="edo">
+        <table border="1">
+            <thead>
+                <th>Campo</th>
+                <th>Valor</th>
+            </thead>
+            <tbody>
+                <td>Marca:</td>
+                <td>
+                    <select id="marca" name="marca" onchange="changeCar(this.value)">
+                        <option value="Chevrolet" selected>Chevrolet</option>
+                        <option value="Nissan">Nissan</option>
+                    </select>
+                </td>
+                <tr>
+                    <td>Modelo: </td>                    
+                    <td><input type="text" id="modelo" name="modelo" value=""></td>
+                </tr>
+                <tr>
+                    <td>Placas</td>
+                    <td><input type="text" id="placas" name="placas" value=""></td>                    
+                </tr>
+                <tr>
+                    <td><input type="reset" value="Limpiar"></td>
+                    <td><input type="submit" value="Enviar"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <script>
+        const params = window.location.search;
+        const urlParams = new URLSearchParams(params);
+        const nom = urlParams.get("nom");
+        const ap = urlParams.get("ap");
+        const gen = urlParams.get("gen");
+        const edad = urlParams.get("edad");
+        const edo = urlParams.get("edo");
+        document.getElementById("lblNom").innerHTML = nom + " " + ap;
+        document.getElementById("lblGen").innerHTML = gen;
+        document.getElementById("lblEdad").innerHTML = edad;
+        document.getElementById("lblEdo").innerHTML = edo;
+        document.getElementById("nom").value = nom + " " + ap;
+        document.getElementById("gen").value = gen;
+        document.getElementById("edad").value = edad;
+        document.getElementById("edo").value = edo;        
+    </script>
+</body>
+
+</html>
